@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rohan Rao — Security &amp; Infrastructure Engineer and Fullstack Developer, with a passion for travel photography and cinematography. B.Tech, IIIT Hyderabad.">
+  <title>Rohan Rao — Security Engineer &amp; Fullstack Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <p class="loader-prompt"><span class="prompt-sign">&gt;</span> booting rohan_rao.exe<span class="dots">...</span></p>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <p class="loader-pct" id="loaderPct">0%</p>
+    </div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR GLOW (decorative, ignored on touch) ============ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <div id="main">
+
+    <!-- ============ NAV ============ -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="brand">
+          <span class="brand-prompt">rohan@portfolio</span><span class="brand-caret">:~$</span>
+        </a>
+
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="navLinks" class="nav-links">
+          <li><a href="#about" class="nav-link"><span class="nav-num">01</span>About</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-num">02</span>Experience</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num">03</span>Projects</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-num">04</span>Skills</a></li>
+          <li><a href="#achievements" class="nav-link"><span class="nav-num">05</span>Beyond Work</a></li>
+          <li><a href="#contact" class="nav-link nav-cta"><span class="nav-num">06</span>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero">
+      <canvas id="heroCanvas"></canvas>
+      <div class="hero-scrim"></div>
+
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow mono-tag reveal"><span class="bracket">[</span> whoami <span class="bracket">]</span></p>
+        <h1 class="hero-name reveal">Rohan Rao</h1>
+        <p class="hero-role reveal">
+          <span id="typedRole" class="typed-role"></span><span class="typed-cursor">_</span>
+        </p>
+        <p class="hero-desc reveal">
+          By day I harden networks and ship automation at IDFC First Bank. By first light,
+          I'm usually on a ridge somewhere with a camera, chasing the same sunrise the
+          rest of the world slept through.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="Rohan-Rao-Resume.pdf" class="btn btn-primary" download>
+            <span>Download Résumé</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span>Get in touch</span>
+          </a>
+        </div>
+
+        <div class="hero-status reveal">
+          <span class="status-dot"></span>
+          <span class="mono-tag">STATUS: <b>open to opportunities</b></span>
+          <span class="status-sep">•</span>
+          <span class="mono-tag">BASED: Mumbai · Hyderabad</span>
+        </div>
+      </div>
+
+      <div class="hero-side-card reveal">
+        <p class="mono-tag hero-side-label">[ uptime.log ]</p>
+        <p class="hero-side-line"><span class="k">education</span> <span class="v">IIIT Hyderabad</span></p>
+        <p class="hero-side-line"><span class="k">day job</span> <span class="v">Security · Automation · Fullstack</span></p>
+        <p class="hero-side-line"><span class="k">off duty</span> <span class="v">Travel · Photography · Cinematography</span></p>
+      </div>
+
+      <div class="scroll-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+          <span>SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;SCROLL TO WAKE ME UP&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag reveal"><span class="bracket">[</span> about <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">From hardening proxies<br> to shipping products.</h2>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a security &amp; infrastructure engineer who spends the day job inside
+              proxy policies, ZTNA rules and mail-security pipelines — and every free
+              weekend somewhere far from a data center, camera in hand.
+            </p>
+            <p>
+              Currently I work on Netskope SWG/ZTNA/DLP, Cisco ETD, WAF and Entra&nbsp;ID
+              tooling at <b>IDFC First Bank</b>, automating workflows that used to take a
+              full afternoon down to a single Python command. Before that, I was building
+              MERN apps, Android tools, and UI prototypes across a handful of startups while
+              finishing my B.Tech at <b>IIIT Hyderabad</b>. Off the clock, I'm usually
+              planning or shooting a trek — chasing sunrises, quiet places, and whatever
+              horizon looks good through a lens.
+            </p>
+            <a href="#experience" class="text-link">See the full timeline →</a>
+          </div>
+
+          <div class="about-terminal reveal">
+            <div class="terminal-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="terminal-title">whoami.sh</span>
+            </div>
+            <div class="terminal-body mono-tag">
+              <p><span class="tprompt">$</span> location</p>
+              <p class="tout">India</p>
+              <p><span class="tprompt">$</span> education</p>
+              <p class="tout">IIIT Hyderabad — B.Tech CSE, CGPA 7.01</p>
+              <p><span class="tprompt">$</span> current_role</p>
+              <p class="tout">Application Engineer, Security &amp; Infrastructure @ IDFC First Bank</p>
+              <p><span class="tprompt">$</span> stack</p>
+              <p class="tout">Python · React · Node · MongoDB · Netskope APIs</p>
+              <p><span class="tprompt">$</span> status</p>
+              <p class="tout tout-accent">open to interesting collaborations_</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-grid reveal">
+          <div class="stat-card">
+            <p class="stat-num" data-target="654" data-prefix="AIR ">AIR 0</p>
+            <p class="stat-label">JEE Mains Rank</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num" data-target="1240">0</p>
+            <p class="stat-label">Codeforces Peak Rating</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num" data-target="7" data-decimal=".01">0</p>
+            <p class="stat-label">CGPA at IIIT Hyderabad</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num" data-target="5">0</p>
+            <p class="stat-label">Fullstack &amp; Mobile Roles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section section-alt">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag cool reveal"><span class="bracket">[</span> experience <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">Where the work happened.</h2>
+
+        <div class="timeline">
+
+          <article class="tl-item reveal">
+            <div class="tl-node tl-node-current"></div>
+            <div class="tl-card">
+              <p class="tl-date mono-tag">2024 — Present</p>
+              <h3 class="tl-role">Application Engineer <span class="tl-tag-current">Current</span></h3>
+              <p class="tl-org">Security &amp; Infrastructure · IDFC First Bank</p>
+              <ul class="tl-points">
+                <li>Automate Netskope SWG / ZTNA / NPA / DLP policy workflows across two tenants, plus Cisco ETD mail-security reporting, with Python.</li>
+                <li>Built a Flask/SQLite internal portal for the WAF team surfacing Noname &amp; Akamai findings — dashboards, evidence uploads, per-finding comments, app-owner directory.</li>
+                <li>Automated DPOP (proxy server) password resets via Python/pexpect with interactive-only credentials, including the security review write-up for SOC and PAM stakeholders.</li>
+                <li>Built a CLI tool to bulk-create Netskope NPA private-access applications from Excel input, with publisher auto-classification and dry-run support.</li>
+                <li>Automated ZTNA policy exports via Playwright with Azure AD/ADFS SSO, and Entra ID group/member exports through Microsoft Graph (MSAL client-credentials flow).</li>
+                <li>Wrote every weighted goal for my own 2026–27 performance cycle, grounded in the automation actually shipped — Netskope integrations, DLP audit scripting, RBI KRI reporting, DSPM rollout.</li>
+              </ul>
+              <div class="tl-tags">
+                <span>Python</span><span>Netskope API</span><span>Cisco ETD</span><span>Entra ID</span><span>Flask</span><span>Playwright</span><span>pexpect</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-node"></div>
+            <div class="tl-card">
+              <p class="tl-date mono-tag">Jul 2024 — Oct 2024</p>
+              <h3 class="tl-role">Fullstack Developer</h3>
+              <p class="tl-org">Phence App</p>
+              <ul class="tl-points">
+                <li>Built a complete end-to-end Android/iOS call-screening service that automatically blocks numbers reported as spam 5+ times.</li>
+              </ul>
+              <div class="tl-tags"><span>Mobile</span><span>Android/iOS</span><span>Spam Detection</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-node"></div>
+            <div class="tl-card">
+              <p class="tl-date mono-tag">May 2023 — Aug 2023</p>
+              <h3 class="tl-role">Fullstack Developer</h3>
+              <p class="tl-org">Infinos Technologies</p>
+              <ul class="tl-points">
+                <li>Built a MERN-stack integration layer connecting software with hardware for temperature control and heater/cooler toggling.</li>
+                <li>Designed a real-time data visualization interface for temperature and humidity across multiple components.</li>
+              </ul>
+              <div class="tl-tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span><span>IoT</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-node"></div>
+            <div class="tl-card">
+              <p class="tl-date mono-tag">Jun 2022 — Aug 2022</p>
+              <h3 class="tl-role">UI Designer</h3>
+              <p class="tl-org">Hatchling.ai</p>
+              <ul class="tl-points">
+                <li>Created a comprehensive UI/UX prototype grounded in user-centered design principles.</li>
+                <li>Collaborated with cross-functional teams to ensure seamless integration of design elements.</li>
+              </ul>
+              <div class="tl-tags"><span>Figma</span><span>UI/UX</span><span>Prototyping</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-node"></div>
+            <div class="tl-card">
+              <p class="tl-date mono-tag">Jan 2022 — Mar 2022</p>
+              <h3 class="tl-role">Android Developer</h3>
+              <p class="tl-org">Parijatham Wellness</p>
+              <ul class="tl-points">
+                <li>Built an Android app enabling doctors to access patient health reports and records.</li>
+                <li>Integrated an appointment-booking feature so doctors could schedule around their availability.</li>
+              </ul>
+              <div class="tl-tags"><span>Android</span><span>Healthcare</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag cool reveal"><span class="bracket">[</span> projects <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">Things I've shipped for fun<br>(and sometimes for a grade).</h2>
+
+        <div class="project-grid">
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">vc-mart/</span>
+            </div>
+            <div class="pcard-body">
+              <h3>VC Mart</h3>
+              <p>A microservices-based e-commerce platform integrating user management, product handling, orders, payments, carts, shipping, notifications, reviews and seller operations.</p>
+              <div class="tl-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
+              <a href="https://github.com/rohan6333" target="_blank" rel="noopener" class="text-link">GitHub profile →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">campus-it/</span>
+            </div>
+            <div class="pcard-body">
+              <h3>Campus-it</h3>
+              <p>A Reddit-style social platform for campuses: users create and join subgreddits, post, comment, vote and save content, while moderators manage members, reports and bans.</p>
+              <div class="tl-tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Docker</span></div>
+              <a href="https://github.com/rohan6333" target="_blank" rel="noopener" class="text-link">GitHub profile →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">eco-extractor/</span>
+            </div>
+            <div class="pcard-body">
+              <h3>Extraction of Ecological Data</h3>
+              <p>Extracted species names and locations from field-survey tables with the tabula library, geocoded them via the OpenStreetMap API, and exported clean CSV/XLSX ready for mapping.</p>
+              <div class="tl-tags"><span>Python</span><span>MongoDB</span><span>Express</span><span>React</span></div>
+              <a href="https://github.com/rohan6333" target="_blank" rel="noopener" class="text-link">GitHub profile →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">ipl-cli/</span>
+            </div>
+            <div class="pcard-body">
+              <h3>IPL Data Management CLI</h3>
+              <p>A CLI-based relational database application for exploring IPL players, matches, runs and wickets — built for a Databases &amp; Analytics course.</p>
+              <div class="tl-tags"><span>Python3</span><span>MySQL</span><span>RDBMS</span></div>
+              <a href="https://github.com/rohan6333" target="_blank" rel="noopener" class="text-link">GitHub profile →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">clash-terminal/</span>
+            </div>
+            <div class="pcard-body">
+              <h3>Clash of Clans — Terminal Edition</h3>
+              <p>A fully object-oriented, terminal-rendered strategy game built with NumPy and Colorama, following OOP standards end to end.</p>
+              <div class="tl-tags"><span>Python3</span><span>OOP</span><span>NumPy</span><span>Colorama</span></div>
+              <a href="https://github.com/rohan6333" target="_blank" rel="noopener" class="text-link">GitHub profile →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="pcard-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="pcard-name">hatchling-ui.fig</span>
+            </div>
+            <div class="pcard-body">
+              <h3>UI/UX Prototype — Hatchling.ai</h3>
+              <p>A comprehensive product UI/UX prototype built around user-centered design principles for an AI-driven platform.</p>
+              <div class="tl-tags"><span>Figma</span><span>Canva</span><span>UX Research</span></div>
+              <a href="https://www.canva.com/design/DAFJc6Xfd7M/bpxPVaEUeiywogRXzMlPyA/edit" target="_blank" rel="noopener" class="text-link">View design →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section-alt">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag cool reveal"><span class="bracket">[</span> stack <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">The toolbox.</h2>
+
+        <div class="skills-grid">
+          <div class="skill-panel reveal">
+            <h3>Languages &amp; Core</h3>
+            <div class="tag-cloud">
+              <span>Python</span><span>C</span><span>C++</span><span>C#</span><span>JavaScript</span>
+              <span>TypeScript</span><span>Dart</span><span>Java</span><span>Golang</span><span>Bash</span>
+            </div>
+          </div>
+          <div class="skill-panel reveal">
+            <h3>Web &amp; Mobile</h3>
+            <div class="tag-cloud">
+              <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>MySQL</span>
+              <span>GraphQL</span><span>Angular</span><span>React Native</span><span>Expo</span><span>Kotlin</span>
+            </div>
+          </div>
+          <div class="skill-panel reveal">
+            <h3>Security &amp; Automation</h3>
+            <div class="tag-cloud">
+              <span>Netskope (SWG/ZTNA/DLP)</span><span>Cisco ETD</span><span>Microsoft Entra ID</span>
+              <span>WAF / Akamai / Noname</span><span>Flask</span><span>Playwright</span><span>MSAL</span><span>pexpect</span>
+            </div>
+          </div>
+          <div class="skill-panel reveal">
+            <h3>Tools &amp; Design</h3>
+            <div class="tag-cloud">
+              <span>GNU/Linux</span><span>Git</span><span>Docker</span><span>Figma</span><span>Canva</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS / BEYOND WORK ============ -->
+    <section id="achievements" class="section">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag reveal"><span class="bracket">[</span> beyond work <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">Beyond the codebase.</h2>
+        <p class="frames-intro reveal">
+          Same restlessness, different output. When I'm not automating something at work,
+          I'm usually planning the next trek or waiting out a sunrise with a camera.
+        </p>
+
+        <div class="badge-grid reveal">
+          <div class="badge-card"><p class="badge-num">654</p><p class="badge-label">JEE Mains — All India Rank</p></div>
+          <div class="badge-card"><p class="badge-num">1240</p><p class="badge-label">Codeforces Max Rating</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Head, National Service Scheme — IIITH</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Head, The Gaming Club — IIITH</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Head of Felicity 2023 — IIITH's Annual Fest</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Campus Ambassador — Sunburn</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Marketing Team — Wink Entertainments</p></div>
+          <div class="badge-card"><p class="badge-num">★</p><p class="badge-label">Campus Ambassador — NoScope Gaming</p></div>
+        </div>
+
+        <div class="edu-por-grid">
+          <div class="edu-block reveal">
+            <h3 class="mono-tag sub-heading">[ education.log ]</h3>
+            <div class="edu-item">
+              <p class="edu-school">IIIT Hyderabad</p>
+              <p class="edu-meta">B.Tech in CSE · 2020 – 2025 · CGPA 7.01</p>
+            </div>
+            <div class="edu-item">
+              <p class="edu-school">Sri Chaitanya Junior College</p>
+              <p class="edu-meta">Higher Secondary Education · 2018 – 2020 · 818/1000</p>
+            </div>
+            <div class="edu-item">
+              <p class="edu-school">Narayana Olympiad School</p>
+              <p class="edu-meta">Secondary Education · 2018 · GPA 7.8</p>
+            </div>
+          </div>
+
+          <div class="edu-block reveal">
+            <h3 class="mono-tag sub-heading">[ teaching.log ]</h3>
+            <div class="edu-item">
+              <p class="edu-school">Teaching Assistant — Embedded Systems Workshop</p>
+              <p class="edu-meta">Taught tutorials, ran labs, graded exams</p>
+            </div>
+            <div class="edu-item">
+              <p class="edu-school">Teaching Assistant — Intro to Software Systems</p>
+              <p class="edu-meta">Taught tutorials, ran labs, graded exams</p>
+            </div>
+            <p class="edu-courses-label mono-tag">relevant coursework</p>
+            <div class="tag-cloud tag-cloud-small">
+              <span>DSA</span><span>Software Engineering</span><span>OS &amp; Networks</span>
+              <span>Machine, Data &amp; Learning</span><span>Probability &amp; Statistics</span>
+              <span>Linear Algebra</span><span>Computer Vision</span><span>Algorithm Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-contact">
+      <div class="section-inner">
+        <p class="eyebrow mono-tag reveal"><span class="bracket">[</span> contact <span class="bracket">]</span></p>
+        <h2 class="section-title reveal">Let's build<br><span class="text-outline">something</span>.</h2>
+        <p class="contact-sub reveal">
+          Got a system to secure, an app to ship, or just want to talk tech —
+          my inbox is open.
+        </p>
+
+        <div class="contact-actions reveal">
+          <a href="mailto:raorohan209@gmail.com" class="btn btn-primary">
+            <span>raorohan209@gmail.com</span>
+          </a>
+          <a href="tel:+919490288883" class="btn btn-ghost">
+            <span>+91 94902 88883</span>
+          </a>
+        </div>
+
+        <div class="socials reveal">
+          <a href="https://www.linkedin.com/in/rohan-rao-6b1ab0247/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="status-sep">•</span>
+          <a href="https://github.com/rohan6333" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Designed &amp; built by Rohan Rao — © <span id="year"></span></p>
+      </footer>
+    </section>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
